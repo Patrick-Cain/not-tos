@@ -1,4 +1,6 @@
 #pragma once
+#include<string>  
+
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
 #include"Monster.h"
@@ -14,20 +16,30 @@ class Battle
 		sf::RectangleShape hp_bar;
 		sf::Font hp_font;
 		sf::Text hp_text;
+		std::string hp_text_string;
+		int max_teamhp, max_hp_bar_length, current_teamhp;
+		float current_hp_bar_length;
 
 		// Music for battle 
 		sf::Music battle_bgm;
 
 		// Monsters initialization
-		Monster monster1, monster2; // should be an array
+		Monster playerteam[2];
+		
 
 
 	public:
-		Battle();
+		Battle(int);
 		virtual ~Battle();
 
+		void initBattleBgFrame();
+		void initTeamHP();
+
+		void setCurrentTeamHP(int);
+
+		void updateTeamHP();
+
 		void drawall(sf::RenderWindow&);
-		void drawTeamHP();
 
 		void playmusic();
 		

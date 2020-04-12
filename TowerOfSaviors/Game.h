@@ -19,6 +19,7 @@ private:
 	// Variables
 	sf::RenderWindow window;
 	sf::Event sfEvent;
+	int number = 9999;
 
 	// For grid
 	int ts = 75;

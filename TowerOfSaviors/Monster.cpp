@@ -1,6 +1,6 @@
 #include "Monster.h"
 
-Monster::Monster(int enorfri) : attribute(1), race(1)
+Monster::Monster(const int enorfri) : attribute(1), race(1), hp(4444)
 {
 	// Load texture for all monster including inherited
 	if (enorfri) {
@@ -11,10 +11,6 @@ Monster::Monster(int enorfri) : attribute(1), race(1)
 		all_monster_texture.loadFromFile("images/temp2.png");
 		this->setTexture(all_monster_texture);
 	}
-	
-
-	// In game attribute
-	currenthp = hp;
 }
 
 Monster::~Monster()
@@ -44,6 +40,5 @@ void Monster::receiveAttack(int attack)
 {
 	/* Receive attack from enemy and minus the currenthp
 	Overrided if from player's monster*/
-	currenthp -= attack;
 
 }

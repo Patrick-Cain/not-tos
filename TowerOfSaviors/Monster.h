@@ -11,7 +11,6 @@ class Monster :
 		/* Attribute list Fire - 1 Water - 2 Earth - 3 
 		Light - 4 Dark - 5 Heart - 6 */
 		int level, exp, cost, hp, attack, recover, skill_level, coldown, coinsvalue;
-		int currenthp;
 
 	public:
 		Monster(int);

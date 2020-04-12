@@ -10,7 +10,7 @@ void Game::initWindows()
 }
 
 // Constructors/Destructors
-Game::Game()
+Game::Game() : battle(0)
 {
 	initWindows();
 	// loading texture
@@ -69,6 +69,7 @@ void Game::updateSFMLEvents()
 void Game::update()
 {
 	this->updateSFMLEvents();
+	battle.setCurrentTeamHP(--number);
 }
 
 void Game::render()
