@@ -3,7 +3,7 @@
 int main() {
 	Game game;
 
-	game.run();
+	game.run(); // initiate the game loop
 
 	return 0;
 }
