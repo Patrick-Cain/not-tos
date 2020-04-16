@@ -4,6 +4,7 @@
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
 #include"Monster.h"
+#include"Enemy.h"
 
 class Battle
 {
@@ -13,7 +14,7 @@ class Battle
 		sf::Sprite battle_bg, battle_uppper_frame, battle_lower_frame, heart;
 
 		// Health bar
-		sf::RectangleShape hp_bar;
+		sf::RectangleShape hp_bar,hp_bar_bg;
 		sf::Font hp_font;
 		sf::Text hp_text;
 		std::string hp_text_string;
@@ -25,8 +26,7 @@ class Battle
 
 		// Monsters initialization
 		Monster playerteam[2];
-		
-
+		Enemy enemy1;
 
 	public:
 		Battle(int);
@@ -35,7 +35,9 @@ class Battle
 		void initBattleBgFrame();
 		void initTeamHP();
 
+		int getCurrentTeamHP();
 		void setCurrentTeamHP(int);
+		int getTotalTeamAttack();
 
 		void updateTeamHP();
 

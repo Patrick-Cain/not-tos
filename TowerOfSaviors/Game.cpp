@@ -17,7 +17,6 @@ Game::Game() : battle(0)
 	bg_texture.loadFromFile("images/background.png");
 	diamonds_texture.loadFromFile("images/diamonds.png");
 	
-
 	// set up diamonds sprite and background sprite
 	background.setTexture(bg_texture);
 	diamonds.setTexture(diamonds_texture);
@@ -70,6 +69,18 @@ void Game::update()
 {
 	this->updateSFMLEvents();
 	battle.setCurrentTeamHP(--number);
+	if (dragged_updated)
+	{
+		// battle.getTotalTeamAttack();
+		// while(attack>0)
+		// find lowest hp enemy
+		// give attack to lowest hp of enenmy **
+		// if enemyhp==0, delete
+
+		// calculate enemy attack
+		// give attack to total team hp
+
+	}
 }
 
 void Game::render()

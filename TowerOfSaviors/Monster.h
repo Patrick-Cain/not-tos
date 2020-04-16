@@ -13,14 +13,16 @@ class Monster :
 		int level, exp, cost, hp, attack, recover, skill_level, coldown, coinsvalue;
 
 	public:
-		Monster(int);
+		Monster(const int att, const int race, const int hp);
 		virtual ~Monster();
+
+		int getHp();
 
 		void draw(sf::RenderWindow&);
 
 		// In Battle Functions
 		// Exp enemy.receiveAttack(monster1.getAttackToOthers);
-		int getAttackToOthers(int, int, int, int); 
+		int calAttackToOthers(int, int, int, int); 
 		virtual void receiveAttack(int);
 		
 };

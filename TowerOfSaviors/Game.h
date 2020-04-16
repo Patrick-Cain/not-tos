@@ -19,7 +19,7 @@ private:
 	// Variables
 	sf::RenderWindow window;
 	sf::Event sfEvent;
-	int number = 9999;
+	int number = 8888;
 
 	// For grid
 	int ts = 75;
@@ -44,6 +44,7 @@ private:
 
 	// Battle
 	Battle battle;
+	bool dragged_updated = true;
 
 public:
 	// Constructors/Destructors

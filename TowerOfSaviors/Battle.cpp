@@ -1,10 +1,8 @@
 #include "Battle.h"
 
-Battle::Battle(int number) : playerteam{Monster(1), Monster(0)}
+Battle::Battle(int number) : playerteam{Monster(1, 1, 4444), Monster(1,1,4444)}
 {	
 	initBattleBgFrame();
-	max_teamhp = 9999;
-	current_teamhp = max_teamhp;
 	initTeamHP();
 }
 
@@ -27,6 +25,12 @@ void Battle::initBattleBgFrame()
 
 void Battle:: initTeamHP()
 {
+	max_teamhp = 0;
+	for (int i = 0; i < 2; i++) {
+		max_teamhp += playerteam[i].getHp();
+	}
+	current_teamhp = max_teamhp;
+
 	// Hp bar
 	heart_t.loadFromFile("images/heart1.png");
 	heart.setTexture(heart_t);
@@ -37,6 +41,11 @@ void Battle:: initTeamHP()
 	hp_bar.setFillColor(sf::Color(233, 91, 60));
 	hp_bar.setOutlineColor(sf::Color(48, 26, 13));
 	hp_bar.setOutlineThickness(3);
+
+	hp_bar_bg.setSize(sf::Vector2f(max_hp_bar_length, 20));
+	hp_bar_bg.setFillColor(sf::Color(0, 0, 0));
+	hp_bar_bg.setOutlineColor(sf::Color(48, 26, 13));
+	hp_bar_bg.setOutlineThickness(3);
 	
 	hp_font.loadFromFile("fonts/BOMBARD.ttf");
 	hp_text.setFont(hp_font);
@@ -47,9 +56,27 @@ void Battle:: initTeamHP()
 	hp_text.setStyle(sf::Text::Bold);
 }
 
+int  Battle::getCurrentTeamHP()
+{
+	return current_teamhp;
+}
+
 void Battle::setCurrentTeamHP(int new_teamhp)
 {
-	current_teamhp = new_teamhp;
+	if (new_teamhp < 0)
+		current_teamhp = 0;
+	else
+		current_teamhp = new_teamhp;
+}
+
+int Battle::getTotalTeamAttack()
+{
+	int totalatttack = 0; 
+	for (int i = 0; i < 2; i++)
+	{
+		totalatttack += playerteam[i].calAttackToOthers(1,3,0,0);
+	}
+	return totalatttack;
 }
 
 void Battle::updateTeamHP()
@@ -69,6 +96,8 @@ void Battle::drawall(sf::RenderWindow& window)
 
 	// Render hp bar
 	updateTeamHP();
+	hp_bar_bg.setPosition(17, 355);
+	window.draw(hp_bar_bg);
 	hp_bar.setPosition(17, 355);
 	window.draw(hp_bar);
 	heart.setPosition(5, 350);
@@ -83,10 +112,11 @@ void Battle::drawall(sf::RenderWindow& window)
 	window.draw(battle_lower_frame);
 
 	// Render all the monster
-	playerteam[0].setPosition(175,210);
-	window.draw(playerteam[0]);
-	playerteam[1].setPosition(0, 280);
-	window.draw(playerteam[1]);
+	for (int i = 0; i < 2; i++) {
+		playerteam[i].setPosition(i * 65 , 280);
+		window.draw(playerteam[i]);
+	}
+	
 
 	// Render all the enemy
 }

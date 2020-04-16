@@ -1,20 +1,20 @@
 #include "Monster.h"
 
-Monster::Monster(const int enorfri) : attribute(1), race(1), hp(4444)
+Monster::Monster(const int att, const int race, const int hp) : attribute(1), race(race), hp(hp), attack(100)
 {
 	// Load texture for all monster including inherited
-	if (enorfri) {
-		all_monster_texture.loadFromFile("images/w3.png");
-		this->setTexture(all_monster_texture);
-	}
-	else {
-		all_monster_texture.loadFromFile("images/temp2.png");
-		this->setTexture(all_monster_texture);
-	}
+	all_monster_texture.loadFromFile("images/temp2.png");
+	this->setTexture(all_monster_texture);
+
 }
 
 Monster::~Monster()
 {
+}
+
+int Monster::getHp()
+{
+	return hp;
 }
 
 void Monster::draw(sf::RenderWindow& window)
@@ -22,7 +22,7 @@ void Monster::draw(sf::RenderWindow& window)
 	window.draw(*this);
 }
 
-int Monster::getAttackToOthers(int attribute, int numofb, int numofe, int combo)
+int Monster::calAttackToOthers(int attribute, int numofb, int numofe, int combo)
 {
 	/* Calculate damage inflicted to others*/
 	/* Attack Rules:
