@@ -1,25 +1,18 @@
 #pragma once
 
-#include<iostream>
-#include<ctime>
-#include<cstdlib>
 
-#include"SFML\System.hpp"
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
-#include"SFML\Audio.hpp"
-#include"SFML\Network.hpp"
 
+#include"BattleState.h"
 #include"Monster.h"
-#include"Battle.h"
+#include"MainMenuState.h"
 
 class Game
 {
 private:
 	// Variables
 	sf::RenderWindow window;
+	std::stack<State*> states;
 	sf::Event sfEvent;
-	int number = 8888;
 
 	// For grid
 	int ts = 75;
@@ -41,10 +34,6 @@ private:
 	
 	// Initialization
 	void initWindows();
-
-	// Battle
-	Battle battle;
-	bool dragged_updated = true;
 
 public:
 	// Constructors/Destructors

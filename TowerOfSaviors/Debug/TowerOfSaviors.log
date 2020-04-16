@@ -1,24 +1,12 @@
-﻿  Game.cpp
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(41,86): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  MainMenuState.cpp
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\MainMenuState.cpp(20,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(41,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\MainMenuState.cpp(20,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(106,12): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(107,12): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(109,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Game.cpp(109,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   TowerOfSaviors.vcxproj -> C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\Debug\TowerOfSaviors.exe

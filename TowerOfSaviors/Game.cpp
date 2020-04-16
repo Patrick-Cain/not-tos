@@ -10,9 +10,10 @@ void Game::initWindows()
 }
 
 // Constructors/Destructors
-Game::Game() : battle(0)
+Game::Game()
 {
 	initWindows();
+	states.push(new MainMenuState(&states));
 	// loading texture
 	bg_texture.loadFromFile("images/background.png");
 	diamonds_texture.loadFromFile("images/diamonds.png");
@@ -24,11 +25,15 @@ Game::Game() : battle(0)
 	// Set initial position of all diamonds
 	diamonds.setPosition(0, 450);
 
-	battle.playmusic();
 }
 
 Game::~Game()
 {
+	// Destroyed all the states created as it is heap memory
+	while (!states.empty()) {
+		delete states.top();
+		states.pop();
+	}
 }
 
 void Game::updateSFMLEvents()
@@ -59,8 +64,8 @@ void Game::updateSFMLEvents()
 			mouseY = sfEvent.mouseMove.y;
 
 			// Debugging code
-			std::cout << "Mouse X: " << mouseX;
-			std::cout << " Mouse Y: " << mouseY << std::endl;
+			//std::cout << "Mouse X: " << mouseX;
+			//std::cout << " Mouse Y: " << mouseY << std::endl;
 		}
 	}
 }
@@ -68,25 +73,40 @@ void Game::updateSFMLEvents()
 void Game::update()
 {
 	this->updateSFMLEvents();
-	battle.setCurrentTeamHP(--number);
-	if (dragged_updated)
-	{
-		// battle.getTotalTeamAttack();
-		// while(attack>0)
-		// find lowest hp enemy
-		// give attack to lowest hp of enenmy **
-		// if enemyhp==0, delete
+	if (!states.empty()) {
+		states.top()->update(sfEvent);
 
-		// calculate enemy attack
-		// give attack to total team hp
-
+		if (states.top()->getQuit()) {
+			states.top()->endState();
+			delete states.top();
+			states.pop();
+		}
 	}
+	else { // Application ends
+		window.close();
+	}
+
+	/*if (dragged_updated)
+	{
+		 battle.getTotalTeamAttack();
+		 while(attack>0)
+		 find lowest hp enemy
+		 give attack to lowest hp of enenmy **
+		 if enemyhp==0, delete
+
+		 calculate enemy attack
+		 give attack to total team hp
+
+	}*/
 }
 
 void Game::render()
 {
 	window.clear();
-	battle.drawall(window);
+	if (!states.empty())
+	{
+		states.top()->render(window);
+	}
 	
 	// Rendering runestone bg
 	background.setPosition(0, 380);
@@ -116,7 +136,6 @@ void Game::render()
 		// std::cout << "Y: " << diamonds.getPosition().y << std::endl;
 	}
 	window.draw(diamonds);
-	
 
 	window.display();
 }
