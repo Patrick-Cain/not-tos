@@ -5,14 +5,15 @@ class Enemy :
 	public sf::Sprite
 {
 	private:
-		int attribute, opp_attribute, attack, cd, hp, defense, lootcoin, lootcard_id;
-	protected:
+		sf::Texture enemy_texture;
+
 	public:
 		Enemy();
 		~Enemy();
+		int hp;
+		int calAttackToOthers();
+		void receiveAttack(int);
 
-		void calOppAttribute();
-		int calAttackToOthers(int);
-		virtual void receiveAttack(int);
+		void draw(sf::RenderWindow& window);
 
 };

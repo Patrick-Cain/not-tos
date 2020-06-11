@@ -1,19 +1,24 @@
 #pragma once
+#include <string>
+#include <iostream>
 #include"SFML\Graphics.hpp"
+
 
 class Monster :
 	public sf::Sprite
 {
 	private:
 		sf::Texture all_monster_texture;
+		int hp;
 
-		const int attribute, race;
+		// const int attribute, race;
 		/* Attribute list Fire - 1 Water - 2 Earth - 3 
 		Light - 4 Dark - 5 Heart - 6 */
-		int level, exp, cost, hp, attack, recover, skill_level, coldown, coinsvalue;
+		// int level, exp, cost, hp, attack, recover, skill_level, coldown, coinsvalue;
 
 	public:
-		Monster(const int att, const int race, const int hp);
+		Monster();
+		Monster(int);
 		virtual ~Monster();
 
 		int getHp();

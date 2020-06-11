@@ -2,37 +2,27 @@
 
 Enemy::Enemy()
 {
-	attribute = 1;
-	calOppAttribute();
-	attack = 1000;
-	cd = 3;
-	hp = 1000;
-	defense = 1000;
-	lootcoin = 1000;
-	lootcard_id = 1000;
+	enemy_texture.loadFromFile("images/w3.png");
+	this->setTexture(enemy_texture);
+	hp = 100;
 }
 
 Enemy::~Enemy()
 {
 }
 
-void Enemy::calOppAttribute()
-{
-}
 
-int Enemy::calAttackToOthers(int attribute)
+int Enemy::calAttackToOthers()
 {
-	if (attribute == opp_attribute)
-		return attack * 150 / 100;
-	return attack;
+	return 20;
 }
 
 void Enemy::receiveAttack(int attack)
 {
-	if (attack > defense) {
-		hp -= (attack - defense);
-	}
-	else {
-		hp -= 1;
-	}
+	hp -= attack;
+}
+
+void Enemy::draw(sf::RenderWindow& window)
+{
+	window.draw(*this);
 }

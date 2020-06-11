@@ -1,10 +1,16 @@
 #include "Monster.h"
 
-Monster::Monster(const int att, const int race, const int hp) : attribute(1), race(race), hp(hp), attack(100)
+Monster::Monster()
 {
+}
+
+Monster::Monster(int id)
+{
+	std::string file_path_to_image = "images/" + std::to_string(id) + ".png";
 	// Load texture for all monster including inherited
-	all_monster_texture.loadFromFile("images/temp2.png");
+	all_monster_texture.loadFromFile(file_path_to_image);
 	this->setTexture(all_monster_texture);
+	hp = 100;
 
 }
 
@@ -29,11 +35,12 @@ int Monster::calAttackToOthers(int attribute, int numofb, int numofe, int combo)
 	more than 3, 1 is 0.25 each, for enchanted is further add 0.15
 	combo is 0.25
 	*/
-	int newattackmulti = 100 + (numofb + numofe - 3) * 25 + numofe * 15;
+	/*int newattackmulti = 100 + (numofb + numofe - 3) * 25 + numofe * 15;
 	int newattack = attack * newattackmulti / 100;
 	int comboeffect = 100 + 25 * combo;
 	
-	return (newattack * comboeffect / 100 );
+	return (newattack * comboeffect / 100 );*/
+	return 10;
 }
 
 void Monster::receiveAttack(int attack) 

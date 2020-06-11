@@ -149,21 +149,30 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="BattleState.cpp" />
+    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Runestone.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Team.cpp" />
+    <ClCompile Include="TeamSelectionState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="BattleState.h" />
+    <ClInclude Include="Grid.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="Runestone.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Team.h" />
+    <ClInclude Include="TeamSelectionState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

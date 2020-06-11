@@ -1,23 +1,27 @@
 #pragma once
 #include "State.h"
 #include "Battle.h"
+#include"Grid.h"
 
 
 class BattleState :
 	public State
 {
 	private:
+		std::stack<State*>* statesptr;
 		Battle battle;
-		int number = 9999;
+		Grid grid1;
+		sf::Vector2i mouse_clicked, mouse_dragging;
 
 	public:
-		BattleState();
+		BattleState(std::stack<State*>*, int arr[], int);
 		virtual ~BattleState();
 
 		// inherited getQuit()
 		// void checkForQuit();
 
-		void update(sf::Event);
+		void updateEvent(sf::Event);
+		void update();
 		void render(sf::RenderWindow&);
 		void endState();
 };

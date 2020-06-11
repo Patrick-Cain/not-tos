@@ -21,10 +21,12 @@ class State
 		virtual ~State();
 
 		bool getQuit();
+		void setQuit();
 		virtual void checkForQuit();
 
 		virtual void endState() = 0;
-		virtual void update(sf::Event) = 0;
+		virtual void updateEvent(sf::Event) = 0;
+		virtual void update() = 0;
 		virtual void render(sf::RenderWindow&) = 0;
 
 };
