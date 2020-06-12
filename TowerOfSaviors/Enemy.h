@@ -6,6 +6,7 @@ class Enemy :
 {
 	private:
 		sf::Texture enemy_texture;
+		int attribute, attack;
 
 	public:
 		Enemy();

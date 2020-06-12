@@ -63,10 +63,9 @@ class Battle
 
 		int getCurrentTeamHP();
 		void setCurrentTeamHP(int);
-		int getTotalTeamAttack();
 
 		void updateTeamHP(bool*, int*, int);
-		void updateTime(bool*, bool);
+		void updateTime(bool*);
 
 		void drawall(sf::RenderWindow&);
 

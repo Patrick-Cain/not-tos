@@ -4,7 +4,19 @@ Enemy::Enemy()
 {
 	enemy_texture.loadFromFile("images/w3.png");
 	this->setTexture(enemy_texture);
-	hp = 100;
+	int id = 1;
+	switch (id)
+	{
+	case 1:
+		hp = 100000;
+		attribute = 0;
+		attack = 20;
+		break;
+
+	default:
+		break;
+	}
+	
 }
 
 Enemy::~Enemy()
@@ -14,7 +26,7 @@ Enemy::~Enemy()
 
 int Enemy::calAttackToOthers()
 {
-	return 20;
+	return attack;
 }
 
 void Enemy::receiveAttack(int attack)

@@ -118,7 +118,7 @@ void Battle::initEnemyHp()
 	enemy_hp_text_string = std::to_string(enemy1.hp) + "/" + std::to_string(max_enemy_hp);
 	enemy_hp_text.setString(enemy_hp_text_string);
 	enemy_hp_text.setCharacterSize(10);
-	enemy_hp_text.setFillColor(sf::Color(106, 39, 56));
+	enemy_hp_text.setFillColor(sf::Color::White);
 	enemy_hp_text.setStyle(sf::Text::Bold);
 }
 
@@ -135,45 +135,50 @@ void Battle::setCurrentTeamHP(int new_teamhp)
 		current_teamhp = new_teamhp;
 }
 
-int Battle::getTotalTeamAttack()
-{
-	int totalatttack = 0; 
-	for (int i = 0; i < 3; i++)
-	{
-		totalatttack += playerteam[i]->calAttackToOthers(1,3,0,0);
-	}
-	return totalatttack;
-}
-
 void Battle::updateTeamHP(bool* launchattack, int* numofstonedeleted, int size)
 {
 	if (*launchattack) {
+		int totalattack = 0;
 		for (int i = 0; i < size; i++) {
 			if (i == 2) {
 				int hp_earned = numofstonedeleted[i] * 10;
-				int new_team_hp = hp_earned + getCurrentTeamHP();
-				if (new_team_hp > max_teamhp) {
-					setCurrentTeamHP(max_teamhp);
+				if (hp_earned>0) {
+					std::cout << "HP earned: " << hp_earned << "\n";
+					int new_team_hp = hp_earned + getCurrentTeamHP();
+					if (new_team_hp > max_teamhp) {
+						setCurrentTeamHP(max_teamhp);
+					}
+					else {
+						setCurrentTeamHP(new_team_hp);
+					}
 				}
-				else {
-					setCurrentTeamHP(new_team_hp);
-				}
-				
 			}
 			else {
-				enemy1.receiveAttack(numofstonedeleted[i] * 5);
+				for (int j = 0; j < 3; j++)
+				{
+					totalattack += playerteam[j]->calAttackToOthers(i, numofstonedeleted[i], 0);
+					
+				}
 			}
+			numofstonedeleted[i] = 0;
 		}
+		std::cout << "Total Damaged Done :" << totalattack << "\n";
+		enemy1.receiveAttack(totalattack);
 		if (enemy1.hp <= 0) {
 			enemy_died = true;
+			std::cout << "-------------------------------------------\n";
 		}
 		else {
 			int attack = enemy1.calAttackToOthers();
+			std::cout << "Damaged Done By Enemy:" << attack << "\n";
+			std::cout << "-------------------------------------------\n";
 			int hp = getCurrentTeamHP();
 			setCurrentTeamHP(hp - attack);
 		}
 		*launchattack = false;
 	}
+	
+	// Update text for Both HP Bar
 	hp_text_string = std::to_string(current_teamhp) + "/" + std::to_string(max_teamhp);
 	hp_text.setString(hp_text_string);
 	current_hp_bar_length = (float)current_teamhp / max_teamhp * max_hp_bar_length;
@@ -185,7 +190,7 @@ void Battle::updateTeamHP(bool* launchattack, int* numofstonedeleted, int size)
 	enemy_hp_bar.setSize(sf::Vector2f(current_enemy_hp_bar_length, 10));
 }
 
-void Battle::updateTime(bool* time_up, bool clicked)
+void Battle::updateTime(bool* time_up)
 {
 	
 	if (*clicked_ptr && *spinning_ptr) {

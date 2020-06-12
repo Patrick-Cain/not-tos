@@ -41,7 +41,7 @@ void BattleState::update()
 	if (battle.getCurrentTeamHP() <= 0) {
 		this->setQuit();
 	}
-	battle.updateTime(&grid1.time_up, grid1.clicked);
+	battle.updateTime(&grid1.time_up);
 }
 
 void BattleState::render(sf::RenderWindow& window)

@@ -9,7 +9,8 @@ class Monster :
 {
 	private:
 		sf::Texture all_monster_texture;
-		int hp;
+		std::string kind_string = "";
+		
 
 		// const int attribute, race;
 		/* Attribute list Fire - 1 Water - 2 Earth - 3 
@@ -17,6 +18,7 @@ class Monster :
 		// int level, exp, cost, hp, attack, recover, skill_level, coldown, coinsvalue;
 
 	public:
+		int hp, attribute, attack;
 		Monster();
 		Monster(int);
 		virtual ~Monster();
@@ -27,8 +29,7 @@ class Monster :
 
 		// In Battle Functions
 		// Exp enemy.receiveAttack(monster1.getAttackToOthers);
-		int calAttackToOthers(int, int, int, int); 
-		virtual void receiveAttack(int);
+		int calAttackToOthers(int, int, int); 
 		
 };
 
