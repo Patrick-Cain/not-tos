@@ -21,6 +21,7 @@ Battle::~Battle()
 {
 	// stopping music
 	battle_bgm.stop();
+	stone_clear.stop();
 	for (int i = 0; i < 3; i++)
 	{
 		delete playerteam[i];
@@ -161,11 +162,15 @@ void Battle::updateTeamHP(bool* launchattack, int* numofstonedeleted, int size)
 			else {
 				for (int j = 0; j < 3; j++)
 				{
-					totalattack += playerteam[j]->calAttackToOthers(i, numofstonedeleted[i], 0);
+					totalattack += playerteam[j]->calAttackToOthers(i, numofstonedeleted[i]);
 					
 				}
 			}
 			numofstonedeleted[i] = 0;
+		}
+		if (totalattack > 0) {
+			stone_clear.stop();
+			stone_clear.play();
 		}
 		std::cout << "Total Damaged Done :" << totalattack << "\n";
 		enemy1.receiveAttack(totalattack);
@@ -287,5 +292,6 @@ void Battle::drawall(sf::RenderWindow& window)
 void Battle::playmusic()
 {
 	battle_bgm.openFromFile("music/battle.wav");
+	stone_clear.openFromFile("music/stone_clear.wav");
 	battle_bgm.play();
 }

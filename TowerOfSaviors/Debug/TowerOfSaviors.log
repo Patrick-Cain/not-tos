@@ -29,5 +29,5 @@ C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(112,
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(265,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(269,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   TowerOfSaviors.vcxproj -> C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\Debug\TowerOfSaviors.exe

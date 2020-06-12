@@ -29,7 +29,7 @@ class Monster :
 
 		// In Battle Functions
 		// Exp enemy.receiveAttack(monster1.getAttackToOthers);
-		int calAttackToOthers(int, int, int); 
+		int calAttackToOthers(int, int); 
 		
 };
 

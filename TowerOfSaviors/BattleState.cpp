@@ -39,11 +39,11 @@ void BattleState::update()
 	grid1.updateGrid(mouse_clicked, mouse_dragging);
 	battle.updateTeamHP(&grid1.launchattack, grid1.numberofstonedeleted, 6);
 	if (battle.getCurrentTeamHP() <= 0) {
-		std::cout << "YOU DIED";
+		std::cout << "YOU DIED\n";
 		this->setQuit();
 	}
 	if (battle.getEnemyDied()) {
-		std::cout << "ENEMY DIED, YOU WIN";
+		std::cout << "ENEMY DIED, YOU WIN\n";
 		this->setQuit();
 	}
 	battle.updateTime(&grid1.time_up);

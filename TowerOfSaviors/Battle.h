@@ -46,7 +46,7 @@ class Battle
 		float current_time_bar_length, time_value;
 
 		// Music for battle 
-		sf::Music battle_bgm;
+		sf::Music battle_bgm, stone_clear;
 
 		// Monsters initialization
 		Monster* playerteam[3];

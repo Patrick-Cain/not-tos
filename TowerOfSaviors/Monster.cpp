@@ -96,7 +96,7 @@ void Monster::draw(sf::RenderWindow& window)
 	window.draw(*this);
 }
 
-int Monster::calAttackToOthers(int attribute, int numofb, int combo)
+int Monster::calAttackToOthers(int attribute, int numofb)
 {
 	/* Calculate damage inflicted to others*/
 	/* Attack Rules:
