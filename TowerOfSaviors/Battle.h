@@ -63,6 +63,7 @@ class Battle
 
 		int getCurrentTeamHP();
 		void setCurrentTeamHP(int);
+		bool getEnemyDied();
 
 		void updateTeamHP(bool*, int*, int);
 		void updateTime(bool*);

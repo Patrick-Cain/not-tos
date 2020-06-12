@@ -8,7 +8,7 @@ Enemy::Enemy()
 	switch (id)
 	{
 	case 1:
-		hp = 100000;
+		hp = 300;
 		attribute = 0;
 		attack = 20;
 		break;

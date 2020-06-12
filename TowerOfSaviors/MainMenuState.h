@@ -7,12 +7,8 @@ class MainMenuState :
 {
 	private:
 		std::stack<State*>* statesptr;
-		
-		sf::CircleShape start_button;
-		bool startbattle=false;
-
-		sf::Texture main_main_bg_t;
-		sf::Sprite main_main_bg;
+		sf::Texture main_main_bg_t, start_button_t;
+		sf::Sprite main_main_bg, start_button;
 		sf::Text start_button_txt;
 		sf::Font start_button_txt_font;
 

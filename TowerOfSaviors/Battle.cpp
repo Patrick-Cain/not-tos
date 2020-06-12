@@ -13,7 +13,7 @@ Battle::Battle(bool* clicked, bool* spinning, bool* time_up, int team_id[], int 
 	clicked_ptr = clicked;
 	time_up_ptr = time_up;
 	spinning_ptr = spinning;
-
+	playmusic();
 
 }
 
@@ -135,6 +135,11 @@ void Battle::setCurrentTeamHP(int new_teamhp)
 		current_teamhp = new_teamhp;
 }
 
+bool Battle::getEnemyDied()
+{
+	return enemy_died;
+}
+
 void Battle::updateTeamHP(bool* launchattack, int* numofstonedeleted, int size)
 {
 	if (*launchattack) {
@@ -166,15 +171,15 @@ void Battle::updateTeamHP(bool* launchattack, int* numofstonedeleted, int size)
 		enemy1.receiveAttack(totalattack);
 		if (enemy1.hp <= 0) {
 			enemy_died = true;
-			std::cout << "-------------------------------------------\n";
+			
 		}
 		else {
 			int attack = enemy1.calAttackToOthers();
 			std::cout << "Damaged Done By Enemy:" << attack << "\n";
-			std::cout << "-------------------------------------------\n";
 			int hp = getCurrentTeamHP();
 			setCurrentTeamHP(hp - attack);
 		}
+		std::cout << "-------------------------------------------\n";
 		*launchattack = false;
 	}
 	
