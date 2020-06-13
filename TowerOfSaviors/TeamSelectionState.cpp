@@ -130,7 +130,9 @@ void TeamSelectionState::updateEvent(sf::Event e)
 					{
 						if (monster_catalog[i].getGlobalBounds().contains(e.mouseButton.x, e.mouseButton.y)) {
 							if (check_selected(i + 1) == true) {
-								chararcter_selected_array[click] = i + 1;
+								if (click >= 0 && click <= 2) {
+									chararcter_selected_array[click] = i + 1;
+								}
 								std::cout << "Choice " << click + 1 << ": " << monster_name[i] << ". \n";
 								click++;
 								is_Clicked = true;
@@ -206,6 +208,9 @@ bool TeamSelectionState::check_selected(int searchkey)
 		{
 			return true;
 			break;
+		}
+		else {
+			return false;
 		}
 	}
 }

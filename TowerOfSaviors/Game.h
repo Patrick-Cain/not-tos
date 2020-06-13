@@ -10,9 +10,7 @@ private:
 	sf::RenderWindow window;
 	std::stack<State*> states;
 	sf::Event sfEvent;
-	
-	
-	
+
 	// Initialization
 	void initWindows();
 
@@ -22,7 +20,6 @@ public:
 	virtual ~Game();
 
 	// Functions
-	void updateSFMLEvents();
 	void update();
 	void render();
 	void run();

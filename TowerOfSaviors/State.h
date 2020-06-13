@@ -22,7 +22,6 @@ class State
 
 		bool getQuit();
 		void setQuit();
-		virtual void checkForQuit();
 
 		virtual void endState() = 0;
 		virtual void updateEvent(sf::Event) = 0;

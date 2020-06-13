@@ -10,8 +10,7 @@ class Grid
 private:
 	struct piece
 	{
-		int x, y, col, row, kind, match, alpha;
-		piece() { match = 0; alpha = 255; }
+		int x =0, y=0, col=0, row=0, kind=0, match=0, alpha=255;
 	} grid[10][10];
 
 	sf::Texture bg_texture;

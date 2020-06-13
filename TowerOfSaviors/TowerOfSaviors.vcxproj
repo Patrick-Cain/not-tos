@@ -154,7 +154,6 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="Team.cpp" />
     <ClCompile Include="TeamSelectionState.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,7 +165,6 @@
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="Team.h" />
     <ClInclude Include="TeamSelectionState.h" />
   </ItemGroup>
   <ItemGroup>

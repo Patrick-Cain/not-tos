@@ -8,59 +8,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Enemy">
-    <Position X="13" Y="1.5" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAgAKAAAAAAAAAkIAAAAAAAAAAACAAABAAAAAAAA=</HashCode>
       <FileName>Enemy.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Game">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAABAAAAAAAAAAAAAAAAAiAEAAMAAAAAAAVAAA=</HashCode>
+      <HashCode>AAAAAgAABAAAAAAAAAAAAAAAAAiAAAAMAAAAAAAVAAA=</HashCode>
       <FileName>Game.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Monster">
-    <Position X="14.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACAEAAAAAACgIAAAAAAAAAAACEAgBAAAAABAA=</HashCode>
-      <FileName>Monster.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Team">
-    <Position X="13" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Team.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BattleState">
-    <Position X="2.25" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAQAAACAIAAAAAAAAgAAAACAMAAAAAWAAA=</HashCode>
-      <FileName>BattleState.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="State" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIBAAAAARAAAAAAAAAAAAAAAAAAAAAAAAABBBAWAAA=</HashCode>
-      <FileName>State.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MainMenuState">
-    <Position X="0.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAEAAAAAAABAABACAIAAAAAQAAAAAIAEAAAAAWAAA=</HashCode>
-      <FileName>MainMenuState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Grid">
     <Position X="9.25" Y="0.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Nested Types" Collapsed="false" />
-    </Compartments>
     <NestedTypes>
       <Struct Name="Grid::piece" Collapsed="true">
         <TypeIdentifier>
@@ -73,11 +35,39 @@
       <FileName>Grid.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TeamSelectionState">
-    <Position X="4" Y="1.75" Width="1.5" />
+  <Class Name="Monster">
+    <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EgZABAEAEDCgEAAABkgAAAAAgAIIAIBAhFESJAAWgAI=</HashCode>
+      <HashCode>AAAAAAACAAAAAAEASAIAAAAAAAAAAACEAgBAAAAABAA=</HashCode>
+      <FileName>Monster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamSelectionState">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgZABAEAEDCgEAAAREgAAAAAgAIIAIBAhFESJAAWgAI=</HashCode>
       <FileName>TeamSelectionState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleState">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAQAAACAIAAAAAAAAgAAAACAMAAAAAWAAA=</HashCode>
+      <FileName>BattleState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuState">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAAAAABAABACAIAAAAAQAAAAAIAEAAAAAWAAA=</HashCode>
+      <FileName>MainMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="State" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAARAAAAAAAAAAAAAAAAAAAAAAAAABBBAWAAA=</HashCode>
+      <FileName>State.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -17,11 +17,3 @@ void State::setQuit()
 {
 	this->quit = true;
 }
-
-void State::checkForQuit()
-{
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-	{
-		this->quit = true;
-	}
-}

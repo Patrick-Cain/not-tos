@@ -17,9 +17,6 @@ class BattleState :
 		BattleState(std::stack<State*>*, int arr[], int, int*, int*, int*);
 		virtual ~BattleState();
 
-		// inherited getQuit()
-		// void checkForQuit();
-
 		void updateEvent(sf::Event);
 		void update();
 		void render(sf::RenderWindow&);

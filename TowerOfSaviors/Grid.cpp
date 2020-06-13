@@ -149,11 +149,13 @@ void Grid::updateGrid(sf::Vector2i mouse_clicked, sf::Vector2i mouse_dragging)
 		x = (mouse_dragging.x - grid_offset.x) / ts;
 		y = (mouse_dragging.y - grid_offset.y) / ts;
 		// if moved to another tile
-		if (x >= 0 && x <= 5 && y >= 0 && y <= 4) {
-			if (x != x0 || y != y0)
-			{
-				swapStone(grid[y][x], grid[y0][x0]);
-				x0 = x, y0 = y;
+		if (x0 >= 0 && x0 <= 5 && y0 >= 0 && y0 <= 4) {
+			if (x >= 0 && x <= 5 && y >= 0 && y <= 4) {
+				if (x != x0 || y != y0)
+				{
+					swapStone(grid[y][x], grid[y0][x0]);
+					x0 = x, y0 = y;
+				}
 			}
 		}
 	}
