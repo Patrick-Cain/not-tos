@@ -1,11 +1,15 @@
 #include "Battle.h"
 
-Battle::Battle(bool* clicked, bool* spinning, bool* time_up, int team_id[], int size)
+Battle::Battle(bool* clicked, bool* spinning, bool* time_up, int team_id[], int size, int* monster_hp, int* monster_attack, int* kind_arr)
 {	
 	initBattleBgFrame();
 	for (int i = 0; i < 3; i++)
 	{
-		playerteam[i] = new Monster(team_id[i]);
+		int hp = monster_hp[team_id[i] - 1];
+		int attack = monster_attack[team_id[i] - 1];
+		int kind = kind_arr[team_id[i] - 1];
+		playerteam[i] = new Monster(team_id[i], hp, attack, kind);
+
 	}
 	initTeamHP();
 	initEnemyHp();

@@ -53,7 +53,7 @@ class Battle
 		Enemy enemy1;
 
 	public:
-		Battle(bool*, bool*, bool*, int arr[], int);
+		Battle(bool*, bool*, bool*, int arr[], int, int*, int*,int*);
 		virtual ~Battle();
 
 		void initBattleBgFrame();

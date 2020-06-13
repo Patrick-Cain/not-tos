@@ -14,7 +14,7 @@ class BattleState :
 		sf::Vector2i mouse_clicked, mouse_dragging;
 
 	public:
-		BattleState(std::stack<State*>*, int arr[], int);
+		BattleState(std::stack<State*>*, int arr[], int, int*, int*, int*);
 		virtual ~BattleState();
 
 		// inherited getQuit()

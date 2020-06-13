@@ -4,82 +4,16 @@ Monster::Monster()
 {
 }
 
-Monster::Monster(int id)
+Monster::Monster(int id, int hp, int attack, int kind)
 {
+	std::string kind_string_arr[6] = {"Water", "Earth", "Heart", "Dark", "Fire", "Light"};
 	std::string file_path_to_image = "images/" + std::to_string(id) + ".png";
-	// Load texture for all monster including inherited
-	all_monster_texture.loadFromFile(file_path_to_image);
-	this->setTexture(all_monster_texture);
-	switch (id)
-	{
-	case 1:
-		hp = 100;
-		attribute = 4;
-		kind_string = "Fire";
-		attack = 50;
-		break;
-
-	case 2:
-		hp = 200;
-		attribute = 1;
-		kind_string = "Earth";
-		attack = 50;
-		break;
-
-	case 3:
-		hp = 300;
-		attribute = 5;
-		kind_string = "Light";
-		attack = 50;
-		break;
-
-	case 4:
-		hp = 100;
-		attribute = 0;
-		kind_string = "Water";
-		attack = 50;
-		break;
-
-	case 5:
-		hp = 100;
-		attribute = 3;
-		kind_string = "Dark";
-		attack = 50;
-		break;
-	
-	case 6:
-		hp = 100;
-		attribute = 0;
-		kind_string = "Water";
-		attack = 50;
-		break;
-	
-	case 7:
-		hp = 100;
-		attribute = 1;
-		kind_string = "Earth";
-		attack = 50;
-		break;
-	
-	case 8:
-		hp = 100;
-		attribute = 3;
-		kind_string = "Dark";
-		attack = 50;
-		break;
-	
-	case 9:
-		hp = 100;
-		attribute = 5;
-		kind_string = "Light";
-		attack = 50;
-		break;
-
-	default:
-		std::cout << "Invalid Team Player Chosen\n";
-		break;
-	}
-
+	monster_texture.loadFromFile(file_path_to_image);
+	this->setTexture(monster_texture);
+	this->hp = hp;
+	this->attack = attack;
+	this->kind = kind;
+	this->kind_string = kind_string_arr[kind];
 }
 
 Monster::~Monster()
@@ -103,7 +37,7 @@ int Monster::calAttackToOthers(int attribute, int numofb)
 	more than 3, 1 is 0.25 each, for enchanted is further add 0.15
 	combo is 0.25
 	*/
-	if (attribute == this->attribute && numofb !=0) {
+	if (attribute == this->kind && numofb !=0) {
 		int newattackmulti = 100 + (numofb - 3) * 25;
 		int newattack = attack * (float)newattackmulti / 100;
 		// int comboeffect = 100 + 25 * combo;

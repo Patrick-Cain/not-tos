@@ -1,5 +1,5 @@
 #pragma once
-#include"Runestone.h"
+#include"SFML/Graphics.hpp"
 #include <iostream>
 
 #include <ctime>

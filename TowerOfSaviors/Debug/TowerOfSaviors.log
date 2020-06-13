@@ -1,33 +1,66 @@
-﻿  Battle.cpp
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(55,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Game.cpp
+  BattleState.cpp
+  Grid.cpp
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Grid.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Grid.cpp(186,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Grid.cpp(186,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Grid.cpp(187,52): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Grid.cpp(187,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+  main.cpp
+  MainMenuState.cpp
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\MainMenuState.cpp(37,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(60,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\MainMenuState.cpp(37,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(81,32): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+  TeamSelectionState.cpp
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(19,37): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(80,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(80,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(109,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(86,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(109,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(107,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(131,87): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(112,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(131,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\Battle.cpp(269,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(144,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(144,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(185,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\TowerOfSaviors\TeamSelectionState.cpp(211): warning C4715: 'TeamSelectionState::check_selected': not all control paths return a value
   TowerOfSaviors.vcxproj -> C:\Users\Hong Jian\Documents\cppvs\TowerOfSaviors\Debug\TowerOfSaviors.exe

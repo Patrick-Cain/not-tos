@@ -87,6 +87,12 @@ TeamSelectionState::TeamSelectionState(std::stack<State*>* states_stack_ptr) : m
 	is_Clicked = false;
 	is_Deleted = false;
 	is_Empty = false;
+	for (int i = 0; i < 9; i++)
+	{
+		std::cout << "Monster " << i + 1 << ": " << monster_name[i] << "\n";
+		std::cout << "HP: " << monster_hp[i] << "\t Attack: " << monster_attack[i] << "\n";
+	}
+	std::cout << "\n";
 }
 
 TeamSelectionState::~TeamSelectionState()
@@ -104,7 +110,7 @@ void TeamSelectionState::updateEvent(sf::Event e)
 			{
 				if (click == 3)
 				{
-					(*statesptr).push(new BattleState(statesptr, chararcter_selected_array, 3));
+					(*statesptr).push(new BattleState(statesptr, chararcter_selected_array, 3, monster_hp, monster_attack, kind));
 				}
 
 				if (click != 3)

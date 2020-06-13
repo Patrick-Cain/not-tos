@@ -1,9 +1,9 @@
 #include "BattleState.h"
 
-BattleState::BattleState(std::stack<State*>* states_stack_ptr, int team_id[], int size) : battle(&(grid1.clicked), &(grid1.spinning), &(grid1.time_up), team_id, 3)
+BattleState::BattleState(std::stack<State*>* states_stack_ptr, int team_id[], int size, int* monster_hp, int* monster_attack, int* kind_arr)
+	: battle(&(grid1.clicked), &(grid1.spinning), &(grid1.time_up), team_id, 3, monster_hp, monster_attack, kind_arr)
 {
 	statesptr = states_stack_ptr;
-	// battle.playmusic();
 }
 
 BattleState::~BattleState()

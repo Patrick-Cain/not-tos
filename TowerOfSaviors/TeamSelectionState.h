@@ -18,6 +18,9 @@ private:
 	sf::Sprite monster_selected[9];
 
 	std::string monster_name[9];
+	int monster_hp[9] = { 90, 100, 90, 80, 100, 90, 90, 80, 100 };
+	int monster_attack[9] = {50, 40, 60, 60, 40, 50, 50, 70, 50};
+	int kind[9] = { 4, 1, 5, 0, 3, 0, 1, 3, 5};
 	
 	sf::Text battle_button_txt, team_selection_txt, instruction_txt, your_team_txt, clear_txt;
 	sf::Font battle_button_txt_font, team_selection_txt_font, instruction_txt_font, your_team_txt_font, clear_txt_font;
