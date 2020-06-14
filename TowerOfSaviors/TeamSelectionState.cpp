@@ -202,15 +202,7 @@ bool TeamSelectionState::check_selected(int searchkey)
 		if (chararcter_selected_array[i] == searchkey)
 		{
 			return false;
-			break;
-		}
-		if (i == 2)
-		{
-			return true;
-			break;
-		}
-		else {
-			return false;
 		}
 	}
+	return true;
 }
